@@ -1,0 +1,14 @@
+from google.colab import drive
+import os
+
+drive.mount('/content/drive')
+
+search_folder = '/content/drive/My Drive/'
+
+
+file_name = input("File Name?")
+
+for dirpath, dirnames, filenames in os.walk(search_folder):
+    if file_name in filenames:
+        full_path = os.path.join(dirpath, file_name)
+        print("Full path:", full_path)
